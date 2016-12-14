@@ -12,13 +12,16 @@ bogo_sort()
 
 '''Квадратичные сортировки'''
 def insertion_sort(A):
-    for i in range(1, A):
+    for i in range(1, len(A)):
         tmp = A[i]
         k = i-1
         while k >=0 and A[k] > tmp:
             A[k+1] = A[k]
-        A[k] = tmp
+            k -= 1
+        A[k+1] = tmp
     return A
+A = [4, 5, 6, 3, 4, 4]
+print(insertion_sort(A))
 
 
 def choice_sort(A):
