@@ -18,7 +18,6 @@ class Queue:
         else:
             self.end = self.end[0]
             self.end[2] = None
-        print(self)
         return result
 
 a = Queue()

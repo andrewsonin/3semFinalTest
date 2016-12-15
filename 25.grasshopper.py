@@ -1,5 +1,5 @@
 def grasshopper_paths_quantity(n):
-    path = [0, 1]
+    path = [1, 1]
     for i in range(n-1):
         path.append(path[-1] + path[-2])
     return path[-1]
@@ -22,4 +22,4 @@ def min_cost_path(n, price):
             path.append(current - 2)
     return path[::-1]
 
-print(min_cost_path(5, [4, 3, 5, 6, 6, 4, 3]))
+print(grasshopper_paths_quantity(3))

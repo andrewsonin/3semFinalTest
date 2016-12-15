@@ -9,7 +9,7 @@ def longest_common_sub_sequence(seq1, seq2):
                 dynamic_list[j][i] = max(dynamic_list[j-1][i], dynamic_list[j][i-1])
     return dynamic_list[-2][-2]
 
-print(longest_common_sub_sequence('edrtytrf', 'eddvykf'))
+print(longest_common_sub_sequence('loshadky', 'osedlal'))
 
 
 def longest_raising_sub_sequence(obj):
@@ -22,4 +22,4 @@ def longest_raising_sub_sequence(obj):
         dynamic_list.append(counter + 1)
     return max(dynamic_list)
 
-print(longest_raising_sub_sequence([555, 5333, 6543234, 0, 46,  9999999, 53323, 53324, 9999999]))
+print(longest_raising_sub_sequence([555, 5333, 6543234, 0, 46, 9999999, 53323, 53324, 9999999]))

@@ -1,12 +1,15 @@
 class SomeClassParent:
-    def __init__(self, name='SomeClassParent'):
+    def __init__(self, name='blabla'):
         self.name = name
 
 
 class SomeClass(SomeClassParent):
-    def __init__(self, param):
-        super(SomeClass, self).__init__()
+    def __init__(self, param, name='f'):
+        super(SomeClass, self).__init__(name)
         self.param = param
+
+    def hop(self):
+        print(self.name)
 
     def __repr__(self):
         return 'SomeClass(' + str(self.name) + ', ' + str(self.param) + ')'
@@ -70,6 +73,7 @@ class SomeClass(SomeClassParent):
 
 c = SomeClassParent('de')
 b = SomeClass(88)
+b.hop()
 print(b)
 print(str(b))
 print(SomeClass(99) < b)

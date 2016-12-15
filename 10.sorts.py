@@ -15,13 +15,14 @@ def insertion_sort(A):
     for i in range(1, len(A)):
         tmp = A[i]
         k = i-1
-        while k >=0 and A[k] > tmp:
+        while k >= 0 and A[k] > tmp:
             A[k+1] = A[k]
             k -= 1
         A[k+1] = tmp
     return A
 A = [4, 5, 6, 3, 4, 4]
 print(insertion_sort(A))
+'''Вставка элемента в отсортированный подмассив [:i]'''
 
 
 def choice_sort(A):
@@ -31,6 +32,7 @@ def choice_sort(A):
                 A[i], A[k] = A[k], A[i]
     return A
 print(choice_sort([0, 1, 2, 3, 2]))
+'''Поиск минимума в подмассиве [i:]'''
 
 
 def bubble_sort(A):
@@ -39,6 +41,7 @@ def bubble_sort(A):
             if A[i] > A[i+1]:
                 A[i+1], A[i] = A[i], A[i+1]
     return A
+'''Поиск максимума в подмассиве [:i-k]'''
 
 
 def fool_sort(A):
@@ -51,6 +54,8 @@ def fool_sort(A):
             i += 1
     return A
 print(fool_sort([555, 33, 223, 3, 0, 1, 2, 3, 2]))
+'''Перестановка элементов с возвращением к началу при каждой перестановке. Таким образом каждый элемент будет
+сортироваться за O(N**2), все -- за O(N**3).'''
 '''Кубическая'''
 
 
@@ -67,12 +72,11 @@ def count_sort(A):
 # A = list(randint(0, 333) for i in range(0, 10))
 # print(A)
 # print(count_sort(A))
-# '''O(M+N)'''
+'''O(M+N)'''
 
 
 def radix_sort(A):
-    max_len = len(str(max(A)))
-    for i in range(max_len):
+    for i in range(len(str(max(A)))):
         B = [[] for k in range(10)]
         for x in A:
             digit = (x//10**i) % 10
